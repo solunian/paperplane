@@ -1,38 +1,51 @@
-# create-svelte
+# paperplane (work in progress)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A extensible, multi-purpose tool/format for straightforward writing.
 
-## Creating a project
+## Dev Notes
 
-If you're seeing this, you've probably already done this step. Congrats!
+- run prettier before committing!
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Todos
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- [ ] start!
 
-## Developing
+## Description
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- multi-platform writing editor
+- meant for people who want more finetuned control over writing
+  - more options than markdown, less black-magic, under-the-hood than word/docs/libreoffice-writer
+- readable/editable even without the editor
+- easily convertible to other formats
+- writers, students, programmers, anyone can use this!
+- customizable and hackable
+- ever wanted to use vim or emacs for writing? Now you can! I don't know why you would want to though...
+  - vim is far superior btw
+- free?
+- editing history with git, lol
 
-```bash
-npm run dev
+## Features
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- fast loading, autosaves, auto-formatting, auto-linefolding
+- lf/crlf, spaces/tab (spaces better)
+- Unicode w/ utf-8, emojis, show font availability, handpicked "best" fonts
+- .papl convertible to google docs, Word's .doc(x), .odt, .pdf, .md, .html
+- templates including writing formats (APA, MLA, Chicago/Turbian)
+  - line spacing, margins, indentation level, print sizes, alignment
+- customizable formatting: bold #, italic \*, underline |, crossthrough ~, superscript \_, subscript ^, code `
+- slash blocks: /document, /contents, /section, /settings, /style
+- at commands: @annotate[start:stop:step] annotation, @style[start:stop:step] styling, @raw[start:stop:step] @tofix[start:stop:step] message, etc.
+- comments: //, /\* \*/, code blocks with ``` or /code
+- links: \[\]\(\), images/videos: \!\[\]\(\)
+- lists: - [ ] checklist, - unordered list, 1. ordered list
+- find and replace, opt with regex
+- extensions: grammar, autocomplete, custom slash blocks, custom at commands, coding syntax highlighting
 
-## Building
+## Tools Used
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- Tauri: multi-platform app framework
+- SvelteKit: brilliant web framework
+- Tailwind CSS: utility class css styling
+- Typescript: Javascript with types
+- Prettier: code formatter for consistency
+- Heroicons: amazingly, aesthetic icons
