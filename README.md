@@ -5,6 +5,7 @@ A extensible, multi-purpose tool/format for straightforward writing.
 ## Dev Notes
 
 - run prettier before committing!
+- i will definitely start this soon...
 
 ## Todos
 
