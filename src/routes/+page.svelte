@@ -6,6 +6,6 @@
 
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
-hot reloading? more like spicy reloading!
+hot reloading? more like spicy reloading! cool!
 
 <textarea />

@@ -5,7 +5,8 @@ A extensible, multi-purpose tool/format for straightforward writing.
 ## Dev Notes
 
 - run prettier before committing!
-- i will definitely start this soon...
+- i will definitely start this soon...haha nope! college apps...
+- use `npm run tauri dev` to run tauri, refer to docs dude
 
 ## Todos
 
@@ -19,11 +20,11 @@ A extensible, multi-purpose tool/format for straightforward writing.
 - readable/editable even without the editor
 - easily convertible to other formats
 - writers, students, programmers, anyone can use this!
-- customizable and hackable
-- ever wanted to use vim or emacs for writing? Now you can! I don't know why you would want to though...
-  - vim is far superior btw
+- customizable and "hackable" (dunno how to do that)
+- ever wanted to use vim for writing? Now you can with more versatility than `.txt`! I don't know why you would want to though...
 - free?
-- editing history with git, lol
+- be able to show stats for document -> word/char count, typing speed, etc.
+- editing history... similar to docs but shown in a more transparent way??
 
 ## Features
 
