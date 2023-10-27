@@ -42,6 +42,7 @@ A extensible, multi-purpose tool/format for straightforward writing.
 - lists: - [ ] checklist, - unordered list, 1. ordered list
 - find and replace, opt with regex
 - extensions: grammar, autocomplete, custom slash blocks, custom at commands, coding syntax highlighting
+- functions: snippets that can programmatically change depending on document... like word count!
 
 ## Tools Used
 
