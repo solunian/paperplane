@@ -43,6 +43,7 @@ A extensible, multi-purpose tool/format for straightforward writing.
 - find and replace, opt with regex
 - extensions: grammar, autocomplete, custom slash blocks, custom at commands, coding syntax highlighting
 - functions: snippets that can programmatically change depending on document... like word count!
+- foldable blocks: custom sections that can be folded away in the editor
 
 ## Tools Used
 
