@@ -1,11 +1,10 @@
 <script lang="ts">
-  const hello = "hello";
+  import Model from "$lib/Model.svelte";
+  import Sidebar from "$lib/Sidebar.svelte";
 </script>
 
-<h1 class="bg-orange-100 text-xl font-bold hover:underline">Welcome to SvelteKit</h1>
+<div class="flex flex-row">
+  <Sidebar />
 
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-
-hot reloading? more like spicy reloading! cool!
-
-<textarea />
+  <Model />
+</div>
