@@ -10,7 +10,26 @@ A extensible, multi-purpose tool/format for straightforward writing.
 
 ## Todos
 
-- [ ] start!
+- [x] start!
+- [x] frontend scaffold
+- [ ] file explorer
+- [ ] file editor
+- [ ] papl syntax highlighting
+- [ ] papl writing/editing features
+- [ ] papl format converter/compiler
+- [ ] themes
+- [ ] fonts/icon swap
+- [ ] heavy customizability
+- [ ] tooltips
+- [ ] papl/raw/blame viewing modes?
+- [ ] file version control?
+- [ ] extensions?
+- [ ] migrate to tauri v2? still in beta?
+- [ ] online connection to edit papls together?
+
+## Issues
+
+- in fullscreen, there is no title for the app when hovering over the hidden title bar
 
 ## Description
 

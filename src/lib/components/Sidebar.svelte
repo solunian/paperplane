@@ -3,75 +3,60 @@
  -->
 
 <script lang="ts">
-  let explorer: HTMLDivElement;
-  let is_explorer_open = true;
-  const handle_docbutton = () => {
-    explorer.style.display = is_explorer_open ? "none" : "flex";
-    is_explorer_open = !is_explorer_open;
-  };
+  import { is_explorer_open } from "$lib/stores/store";
 
-  function move(element: HTMLDivElement) {
-    return {
-      destroy() {},
-    };
-  }
+  let explorer: HTMLDivElement;
+  const handle_docbutton = () => {
+    explorer.style.display = $is_explorer_open ? "none" : "flex";
+    $is_explorer_open = !$is_explorer_open;
+  };
 
   function resize(element: HTMLDivElement) {
     const right = document.createElement("div");
     right.classList.add("grabber");
     right.classList.add("right");
 
-    const grabbers = [right];
+    let active: DOMRect | null = null,
+      initial_rect: any = null,
+      initial_pos: any = null;
 
-    let active: DOMRect | null = null;
-    let initialRect: any = null,
-      initialPos: any = null;
+    element.appendChild(right);
 
-    grabbers.forEach((grabber) => {
-      element.appendChild(grabber);
-      grabber.addEventListener("mousedown", onMousedown);
-    });
-
-    function onMousedown(event: MouseEvent) {
+    function on_mousedown(event: MouseEvent) {
       active = <DOMRect>(<unknown>event.target);
       const rect = element.getBoundingClientRect();
       const parent = element.parentElement!.getBoundingClientRect();
 
-      // console.log({rect, parent})
-
-      initialRect = {
+      initial_rect = {
         width: rect.width,
         right: parent.right - rect.right,
       };
-      initialPos = { x: event.pageX, y: event.pageY };
-    }
 
-    function onMouseup(event: MouseEvent) {
+      initial_pos = { x: event.pageX, y: event.pageY };
+    }
+    function on_mousemove(event: MouseEvent) {
+      if (!active) return;
+
+      let delta = event.pageX - initial_pos.x;
+      element.style.width = `${initial_rect.width + delta}px`;
+    }
+    function on_mouseup(event: MouseEvent) {
       if (!active) return;
 
       active = null;
-      initialRect = null;
-      initialPos = null;
+      initial_rect = null;
+      initial_pos = null;
     }
 
-    function onMove(event: MouseEvent) {
-      if (!active) return;
-
-      let delta = event.pageX - initialPos.x;
-      element.style.width = `${initialRect.width + delta}px`;
-    }
-
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onMouseup);
+    right.addEventListener("mousedown", on_mousedown);
+    window.addEventListener("mousemove", on_mousemove);
+    window.addEventListener("mouseup", on_mouseup);
 
     return {
       destroy() {
-        window.removeEventListener("mousemove", onMove);
-        window.removeEventListener("mousemove", onMousedown);
-
-        grabbers.forEach((grabber) => {
-          element.removeChild(grabber);
-        });
+        right.removeEventListener("mousedown", on_mousedown);
+        window.removeEventListener("mousemove", on_mousemove);
+        window.removeEventListener("mouseup", on_mouseup);
       },
     };
   }
@@ -79,7 +64,7 @@
   let sidebar_stuff: String[] = ["file1", "file2", "file3"];
 </script>
 
-<aside class="flex flex-row">
+<aside class="flex flex-row bg-gray-500">
   <!-- side-sidebar -->
   <div class="flex flex-col items-center gap-1 bg-gray-500 px-2 py-2">
     <!-- doc/files -->
@@ -124,8 +109,7 @@
 
   <div
     bind:this={explorer}
-    class="relative left-0 top-0 z-0 flex h-full w-[14rem] min-w-[9rem] max-w-[80vw] select-none flex-col bg-gray-400"
-    use:move
+    class="relative left-0 top-0 z-0 flex h-full w-[14rem] min-w-[9rem] max-w-[80vw] select-none flex-col rounded-br-lg rounded-tr-lg bg-gray-400"
     use:resize>
     <!-- new folder, new file, refresh, sort -->
     <div class="flex flex-row items-center justify-end gap-0.5 px-1.5 py-1">
