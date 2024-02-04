@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Footer from "$lib/Footer.svelte";
-  import Model from "$lib/Model.svelte";
-  import Sidebar from "$lib/Sidebar.svelte";
+  import Footer from "$lib/components/Footer.svelte";
+  import Model from "$lib/components/Model.svelte";
+  import Sidebar from "$lib/components/Sidebar.svelte";
 </script>
 
 <div class="flex h-full w-full flex-col">
