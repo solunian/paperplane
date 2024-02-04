@@ -1,6 +1,6 @@
 # paperplane (work in progress)
 
-A extensible, multi-purpose tool/format for straightforward writing.
+An extensible, multi-purpose tool/format for straightforward writing.
 
 ## Dev Notes
 
