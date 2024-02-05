@@ -1,12 +1,17 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { appWindow } from "@tauri-apps/api/window";
+  import { Window } from "@tauri-apps/api/window";
 
   let bar: HTMLDivElement;
 
   onMount(() => {
     bar.addEventListener("dblclick", async (event: MouseEvent) => {
-      await appWindow.toggleMaximize();
+      const window = Window.getCurrent();
+      if (!window.isMaximized()) {
+        window.maximize();
+      } else {
+        window.unmaximize();
+      }
     });
   });
 </script>
