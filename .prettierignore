@@ -16,5 +16,4 @@ yarn.lock
 /src-tauri/target
 
 # tauri weirdness??
-/src-tauri/gen/schemas/desktop-schema.json
-/src-tauri/gen/schemas/macOS-schema.json
+/src-tauri/
