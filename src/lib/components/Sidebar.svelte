@@ -111,6 +111,8 @@
     bind:this={explorer}
     class="relative left-0 top-0 z-0 flex h-full w-[14rem] min-w-[9rem] max-w-[80vw] select-none flex-col rounded-br-lg rounded-tr-lg bg-gray-400"
     use:resize>
+    <!-- removed  -->
+
     <!-- new folder, new file, refresh, sort -->
     <div class="flex flex-row items-center justify-end gap-0.5 px-1.5 py-1">
       <button class="rounded-lg p-1 transition hover:bg-gray-500">
