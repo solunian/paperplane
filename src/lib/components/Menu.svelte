@@ -10,6 +10,13 @@
         close_menu();
       }
     });
+    window.addEventListener("mousedown", (event) => {
+      if (event.x) {
+
+      }
+    });
+
+    window.removeEventListener("keydown", () => {});
   });
 </script>
 
@@ -18,7 +25,7 @@
   <!-- <button class="absolute h-screen w-screen z-30 cursor-default bg-transparent" on:click={close_menu}/> -->
   <div
     transition:fly={{ duration: 250, y: 15 }}
-    class="absolute bottom-0 left-0 right-0 top-0 z-30 m-auto h-80 w-[48rem] rounded-lg border border-gray-300 bg-white px-3 py-3 shadow-2xl">
+    class="absolute bottom-0 left-0 right-0 top-0 z-30 m-auto h-72 w-[40rem] rounded-lg border border-gray-300 bg-white px-3 py-3 shadow-2xl">
     <input
       type="text"
       placeholder="Menu"
